@@ -1,0 +1,12 @@
+#include<stdio.h>
+main()
+{
+int cel,kel;
+float fah;
+printf("Enter Degree Celsius:\n");
+scanf ("%d", &cel);
+printf ("Fahrenheit  \t \t Kelvin \n");
+    fah=(cel*9.00/5)+32;
+    kel=(273+cel);
+printf ("%.2f \t \t \t %d\n",fah,kel);
+}
