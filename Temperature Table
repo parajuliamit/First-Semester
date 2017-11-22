@@ -1,0 +1,13 @@
+#include<stdio.h>
+main()
+{
+int i;
+int fah,kel;
+printf("Celsius \t Fahrenheit \t Kelvin \n");
+for (i=0;i<=100;i+=10)
+{
+    fah=(i*9/5)+32;
+    kel=(273+i);
+printf ("%d \t \t %d \t \t %d\n",i,fah,kel);
+}
+}
