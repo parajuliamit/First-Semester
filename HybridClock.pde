@@ -10,8 +10,8 @@ void setup() {
   size(500, 500) ; 
   background(250) ;
   theta = (3*PI/2) + (s*(PI/30));
-  beta = (3*PI/2) + ((m+(s/60))*(PI/30));
-  gamma = (3*PI/2) + ((h+(m/60))*5*(PI/30));
+  beta = (3*PI/2) + ((m+(s/60.00))*(PI/30));
+  gamma = (3*PI/2) + ((h+(m/60.00))*5*(PI/30));
 
 sec=s;
 min=m;
