@@ -1,0 +1,11 @@
+#include<stdio.h>
+main()
+{
+int i, square;
+printf ("\t n \t \t \t n square \n");
+printf ("   _____________ \t   _______________________\n");
+for (i=1;i<=10;i++){
+square=i*i;
+printf("\t %d \t \t \t   %d \n",i,square);
+}
+}
