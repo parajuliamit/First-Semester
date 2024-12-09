@@ -70,17 +70,17 @@ function draw() {
   text("AMIT", 0, 0);
 
   textAlign(RIGHT);
-  text(months[date.getMonth()], 0, 100);
+  text(months[date.getMonth()], 0, 105);
   textAlign(LEFT);
-  fill(255, 0, 0, 220);
+  fill(255, 0, 0);
   textSize(14);
   let today = date.getDate();
-  text(today < 10 ? "0" + today : today, 2, 100);
+  text(today < 10 ? "0" + today : today, 2, 105);
 
   push();
 
   //   Hour Triangle
-  fill(255, 0, 0, 220);
+  fill(255, 0, 0);
   translate(105 * cos(hourAngle), 105 * sin(hourAngle));
   rotate((hr * Math.PI) / 6);
   triangle(-12, 0, 12, 0, 0, -16);
