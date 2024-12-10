@@ -1,6 +1,21 @@
+const months = [
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
+];
+
 function setup() {
   createCanvas(500, 500);
-  frameRate(10);
+  frameRate(5);
 }
 
 function draw() {
@@ -29,7 +44,6 @@ function draw() {
 
   noStroke();
   textAlign(CENTER, CENTER);
-  push();
 
   fill(50);
   circle(0, 0, 190);
@@ -38,12 +52,10 @@ function draw() {
   fill(255);
   textSize(18);
   textStyle(BOLD);
-  rotate(-(hr / 6) * Math.PI);
   for (let i = 0; i < 12; i++) {
-    let angle = Math.PI + i * (Math.PI / 6);
+    let angle = Math.PI * (1 + i / 6 - hr / 6);
     text(i === 0 ? "12" : i, -80 * cos(angle), -80 * sin(angle));
   }
-  pop();
 
   fill(0);
   arc(0, 0, 190, 190, HALF_PI / 2, PI + HALF_PI + HALF_PI / 2);
@@ -51,18 +63,15 @@ function draw() {
   circle(0, 0, 135);
 
   //  Minute Label
-  push();
   fill(50);
   circle(0, 0, 120);
   textSize(12);
   textStyle(BOLD);
-  rotate(-(mins / 30) * Math.PI);
   fill(355);
   for (let i = 0; i < 12; i++) {
-    let angle = Math.PI + i * (Math.PI / 6);
+    let angle = Math.PI * (1 + i / 6 - mins / 30);
     text(5 * i, -50 * cos(angle), -50 * sin(angle));
   }
-  pop();
 
   fill(0);
   arc(0, 0, 120, 120, HALF_PI / 2, PI + HALF_PI + HALF_PI / 2);
@@ -74,17 +83,14 @@ function draw() {
   circle(0, 0, 35);
   fill(255);
   circle(0, 0, 8);
-  push();
 
   //  Second Label
   fill(255);
   textSize(9);
-  rotate(-(sec / 30) * Math.PI);
   for (let i = 0; i < 12; i++) {
-    let angle = Math.PI + i * (Math.PI / 6);
+    let angle = Math.PI * (1 + i / 6 - sec / 30);
     text(5 * i, -25 * cos(angle), -25 * sin(angle));
   }
-  pop();
 
   fill(255);
   triangle(100, 0, 115, -5, 115, 5);
@@ -96,8 +102,17 @@ function draw() {
   textSize(8);
   text("MIN", 50, 8);
   pop();
-  
+
   textSize(20);
   textStyle(BOLD);
   text("AMIT", -100, 0);
+
+  textSize(12);
+  textAlign(RIGHT, CENTER);
+  text(months[date.getMonth()], 0, 105);
+  textAlign(LEFT, CENTER);
+  fill(255, 0, 0);
+  textSize(14);
+  let today = date.getDate();
+  text(today < 10 ? "0" + today : today, 2, 105);
 }
